@@ -9,12 +9,16 @@ const app = express();
 const server = http.createServer(app);
 const io = socket.init(server);
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  process.env.FRONTEND_URL, // set this in your .env to https://whatsapp-messengers.vercel.app
+];
+
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://whatsapp-messengers.vercel.app'  // Add your deployed frontend here!
-  ]
+  origin: allowedOrigins,
+  credentials: true,
 }));
+
 app.use(express.json());
 
 // Import routes
