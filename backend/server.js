@@ -9,7 +9,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socket.init(server);
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({  origin: ['http://localhost:5173', 'https://whatsapp-messengers.vercel.app'] 
+ }));
 app.use(express.json());
 
 // Import routes
