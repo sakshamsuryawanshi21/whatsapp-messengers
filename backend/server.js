@@ -9,8 +9,15 @@ const app = express();
 const server = http.createServer(app);
 const io = socket.init(server);
 
-app.use(cors({  origin: 'https://whatsapp-messengers.vercel.app' 
- }));
+app.use(
+  cors({
+    "Access-Control-Allow-Origin": "*",
+    origin: ['https://whatsapp-messengers.vercel.app' ,"http://localhost:5174",],
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    allowedHeaders: "Content-Type,Authorization", // Specify the allowed headers
+  })
+);
+
 app.use(express.json());
 
 // Import routes
