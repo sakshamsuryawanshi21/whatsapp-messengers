@@ -3,7 +3,7 @@ let io;
 module.exports = {
   init: (server) => {
     io = require('socket.io')(server, {
-      cors: { origin: 'http://localhost:5173' },
+      cors: { origin: 'http://localhost:5173' , "https://whatsapp-messengers.vercel.app" },
     });
     return io;
   },
