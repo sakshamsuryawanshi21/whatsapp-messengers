@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import { getMessages, sendMessage } from '../services/api';
 import MessageInput from './MessageInput';
 
-const socket = io('http://localhost:5000');
+const socket = io('"https://whatsapp-messengers-production.up.railway.app');
 
 const statusIcons = {
   sent: '✅',
