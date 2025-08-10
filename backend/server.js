@@ -12,7 +12,7 @@ const io = socket.init(server);
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://whatsapp-messengers.vercel.app'
+    'https://whatsapp-messengers.vercel.app'  // Add your deployed frontend here!
   ]
 }));
 app.use(express.json());
