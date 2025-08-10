@@ -1,0 +1,12 @@
+{
+  "name": "whatsapp-messenger",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "node backend/server.js",
+    "client": "cd frontend && npm run dev",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
