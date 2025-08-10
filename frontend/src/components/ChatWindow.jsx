@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import { getMessages, sendMessage } from '../services/api';
 import MessageInput from './MessageInput';
 
-const socket = io('');
+const socket = io('https://whatsapp-messengers-production.up.railway.app');
 
 const statusIcons = {
   sent: '✅',
@@ -127,7 +127,12 @@ const ChatWindow = ({ wa_id, userName }) => {
               >
                 <div className="text-sm break-words">{msg.text}</div>
                 <div className="text-xs text-gray-600 mt-1 flex justify-end items-center gap-2">
-                  <span>{new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                  <span>
+                    {new Date(msg.timestamp).toLocaleTimeString([], {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </span>
                   {isMe && <span>{statusIcons[msg.status]}</span>}
                 </div>
               </div>
