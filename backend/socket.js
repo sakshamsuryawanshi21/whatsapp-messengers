@@ -3,9 +3,10 @@ let io;
 module.exports = {
   init: (server) => {
     io = require('socket.io')(server, {
-      cors: { 
-        origin:'https://whatsapp-messengers.vercel.app' 
-      },
+          "Access-Control-Allow-Origin": "*",
+          origin: ["https://whatsapp-messengers.vercel.app","http://localhost:5174",],
+          methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+          allowedHeaders: "Content-Type,Authorization", // Specify the allowed headers
     });
     return io;
   },
